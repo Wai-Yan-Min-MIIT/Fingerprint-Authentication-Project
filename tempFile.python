@@ -1,0 +1,18 @@
+import json
+
+
+attendance = {}
+ 
+# File operations
+def save_attendance():
+    with open("D:\\Wai_yan_folder\\programming\\fingerprint_recognition\\attendance_finger.json", "w") as file:
+        json.dump(fingerprints, file)
+
+def load_attendance():
+    try:
+        with open("D:\\Wai_yan_folder\\programming\\fingerprint_recognition\\attendance_finger.json", "r") as file:
+            return json.load(file)
+    except FileNotFoundError:
+        return {}
+
+fingerprints = save_attendance()
